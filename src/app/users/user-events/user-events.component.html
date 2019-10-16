@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-6"  *ngFor="let event of events">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{event.firstTeam.nameOfTeam}} : {{event.secondTeam.nameOfTeam}}</h5>
+        <p class="card-text">{{event.startTime}}</p>
+        <a [routerLink]="['/events', event.id]" class="btn btn-primary">Go to the event</a>
+      </div>
+    </div>
+  </div>
+</div>

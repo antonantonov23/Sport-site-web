@@ -1,0 +1,11 @@
+<div class="card" *ngIf="comments.length !== 0">
+  <div class="card-body">
+    <div *ngFor="let comment of comments">
+      <div class="list-group-item-text">
+        <b>{{comment.publisherName}} says:</b><br/>
+        <span>{{comment.bodyOfComment}}</span><br/>
+      </div>
+    </div>
+  </div>
+</div>
+

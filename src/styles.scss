@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+// body {
+//     background-image: url('./assets/images/bg-uncompressed.jpg');
+// }
+
+$blue: #3d697f;
+$blue-light: #5f8c9b;
+$green: #53753e;
+$green-md: #688259;
+$green-light: #9ac97f;
+$green-dark: #1d3111;
+$yellow: #ffcc00;
+$yellow-light: #fef1cc;
+
+$gray-light: #e6e6e5;
+
+body {
+  background-color: $gray-light;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &.bg-1 {
+    background-image: url("./assets/bg/bg1.png");
+  }
+
+  &.bg-2 {
+    background-image: url("./assets/bg/bg2.png");
+  }
+
+  &.bg-3 {
+    background-image: url("./assets/bg/bg3.png");
+  }
+
+  &.bg-4 {
+    background-image: url("./assets/bg/bg4.png");
+  }
+
+  &.bg-5 {
+    background-image: url("./assets/bg/bg5.png");
+  }
+
+  &.bg-6 {
+    background-image: url("./assets/bg/bg6.png");
+  }
+
+  &.bg-7 {
+    background-image: url("./assets/bg/bg7.png");
+  }
+
+  &.bg-9 {
+    background-image: url("./assets/bg/bg9.png");
+  }
+
+  a {
+    color: $green;
+
+    &:hover {
+      text-decoration: none;
+      color: $green-dark;
+    }
+  }
+
+  h5,
+  h2 {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $green;
+    text-align: center;
+  }
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.teams > div,
+.leagues > div,
+.players > div,
+.categories > div {
+  margin-bottom: 10px;
+}

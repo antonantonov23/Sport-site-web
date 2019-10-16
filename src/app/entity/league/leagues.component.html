@@ -1,0 +1,12 @@
+<div class="list-group leagues">
+  <div *ngFor="let league of leagues" (click)="gotoDetail(league)">
+    <a class="list-group-item" [routerLink]="['/leagues', league.id]">
+
+      <h4 class="list-group-item-heading">{{league.nameOfLeague}}</h4>
+      <div class="list-group-item-text">
+          <span>leagues: {{league.nameOfLeague}}</span><br/>
+          <span>Sport Category ID: {{league.sportCategoryId}}</span><br/>
+      </div>
+    </a>
+  </div>
+</div>

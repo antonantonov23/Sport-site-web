@@ -1,0 +1,18 @@
+<div class="card text-center event">
+  <div class="card-img">
+    <img src="assets/default_cover.jpg" alt="Category">
+  </div>
+  <div class="card-body">
+    <div *ngIf="event.firstTeam && event.secondTeam">
+      <h5 class="card-title">{{event.firstTeam.nameOfTeam}} : {{event.secondTeam.nameOfTeam}}</h5>
+    </div>
+    <p class="card-text">Football event</p>
+    <button type="button" class="btn bt-lg btn-success mr-10" (click)="subscribe()" >Subscribe</button>
+    <button type="button" class="btn bt-lg btn-outline-success" (click)="createMeeting()">Create meeting</button>
+  </div>
+  <div class="card-footer text-muted">
+    Starts: {{event.startTime}}
+  </div>
+</div>
+<br>
+<comments-list [comments]="event.comments"></comments-list>

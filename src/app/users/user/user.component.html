@@ -1,0 +1,18 @@
+<div class="card text-center">
+  <div class="card-header">
+    <img src="assets/user.png" alt="User logo">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{user.fullName}}</h5>
+    <p class="card-text">{{user.email}}</p>
+  </div>
+  <div class="card-footer text-muted">
+    Active from: 02 Jan 2018
+  </div>
+</div>
+<br>
+<br>
+<h2>USER EVENTS</h2>
+<br>
+<br>
+<user-events [userId]="user.id"></user-events>

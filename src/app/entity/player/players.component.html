@@ -1,0 +1,17 @@
+<div class="list-group players">
+  <div *ngFor="let player of players" (click)="gotoDetail(player)">
+    <a class="list-group-item" [routerLink]="['/players', player.id]">
+      <div class="card-img">
+        <img src="assets/default_avatar.png" alt="player">
+      </div>
+      <h4 class="list-group-item-heading">{{player.name}}</h4>
+      <div class="list-group-item-text">
+          <span>Player: {{player.nameOfPlayer}}</span><br/>
+          <span>dateOfBirth: {{player.dateOfBirth}}</span><br/>
+          <span>number: {{player.number}}</span><br/>
+          <span>teamId: {{player.teamId}}</span><br/>
+      </div>
+    </a>
+  </div>
+</div>
+

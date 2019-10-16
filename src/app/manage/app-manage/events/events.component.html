@@ -1,0 +1,57 @@
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">New Event</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-signin thumbnail" role="form" name="form" (ngSubmit)="f.form.valid && onSubmitNew()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label>First team</label>
+        <input class="form-control" placeholder="First team" md-input name="fullName" [(ngModel)]="event.firstTeamId" #username="ngModel" required type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Second team</label>
+        <input class="form-control" placeholder="Second team" md-input name="email" [(ngModel)]="event.secondTeamId" #username="ngModel" required type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Starts at</label>
+        <input class="form-control" placeholder="Starts at" required="" type="starts_at" name="starts_at" [(ngModel)]="event.startTime" #password="ngModel" required>
+      </div>
+      <button class="btn btn-block bt-lg btn-outline-success" type="submit">Save</button>
+    </form>
+  </div>
+</ng-template>
+
+<div class="jumbotron">
+  <a role='button' class="btn btn-outline-success pull-right" (click)="newEvent()">New event</a>
+
+  <h2>Events</h2>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Start time</th>
+        <th>Event No1</th>
+        <th>Event No2</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let event of events">
+      <tr>
+        <td>{{event.id}}</td>
+        <td>{{event.startTime}}</td>
+        <td>{{event.firstTeam.nameOfTeam}}</td>
+        <td>{{event.secondTeam.nameOfTeam}}</td>
+        <td nowrap>
+          <button class='btn btn-sm btn-primary mr-5' (click)="editEntity()">Edit</button>
+          <button class='btn btn-sm btn-outline-danger' (click)="deleteEntity()">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,12 @@
+<div class="row categories">
+  <div class="col-sm-6"  *ngFor="let category of categories">
+    <div class="card">
+      <div class="card-img">
+        <img [attr.src]="imageSrc(category.nameOfCategory)" [attr.alt]="category.nameOfCategory">
+      </div>
+      <div class="card-body">
+         <a [routerLink]="['/sport_categories', category.id]"><h5 class="card-title">{{category.nameOfCategory}}</h5></a>
+      </div>
+    </div>
+  </div>
+</div>

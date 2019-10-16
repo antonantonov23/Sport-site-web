@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-sm-6"  *ngFor="let team of teams">
+    <div class="card">
+    <a class="list-group-item" [routerLink]="['/teams', team.id]">
+
+      <h4 class="list-group-item-heading">{{team.nameOfTeam}}</h4>
+      <div class="list-group-item-text">
+        <p>League: {{team.leagueName}}</p>
+      </div>
+    </a>
+    </div>
+  </div>
+</div>

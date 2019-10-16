@@ -1,0 +1,48 @@
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">New Category</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-signin thumbnail" role="form" name="form" (ngSubmit)="f.form.valid && onSubmitNew()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label>Name of Category</label>
+        <input class="form-control" placeholder="Name" md-input name="nameOfCategory" [(ngModel)]="category.nameOfCategory" #username="ngModel" required type="text">
+      </div>
+
+      <button class="btn btn-block bt-lg btn-outline-success" type="submit">Save</button>
+    </form>
+  </div>
+</ng-template>
+
+<div class="jumbotron">
+  <a role='button'  class="btn btn-outline-success pull-right" (click)='newCategory()'>New sport</a>
+  <h2>Sports</h2>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Leagues</th>
+        <th>New?</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let category of categories">
+      <tr>
+        <td>{{category.id}}</td>
+        <td>{{category.nameOfCategory}}</td>
+        <td>{{category.leagues}}</td>
+        <td>{{category.new}}</td>
+        <td nowrap>
+          <button class='btn btn-sm btn-primary mr-5' (click)="editEntity()">Edit</button>
+          <button class='btn btn-sm btn-outline-danger' (click)="deleteEntity()">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

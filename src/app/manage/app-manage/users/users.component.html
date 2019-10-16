@@ -1,0 +1,57 @@
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">New User</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-signin thumbnail" role="form" name="form" (ngSubmit)="f.form.valid && onSubmitNew()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Full name</label>
+        <input class="form-control" placeholder="Full name" md-input name="fullName" [(ngModel)]="user.fullName" #username="ngModel" required type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input class="form-control" placeholder="Email address" md-input name="email" [(ngModel)]="user.email" #username="ngModel" required type="text">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input class="form-control" placeholder="Password" required="" type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+      </div>
+
+      <button class="btn btn-block bt-lg btn-outline-success" type="submit">Save</button>
+    </form>
+  </div>
+</ng-template>
+
+<div class="jumbotron">
+  <a role='button' class="btn btn-outline-success pull-right" (click)="newUser()">New user</a>
+  <h2>Users</h2>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>isAdmin</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.fullName}}</td>
+        <td>{{user.isAdmin}}</td>
+        <td>
+          <button class='btn btn-sm btn-primary mr-5' (click)="editEntity()">Edit</button>
+          <button class='btn btn-sm btn-outline-danger' (click)="deleteEntity()">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

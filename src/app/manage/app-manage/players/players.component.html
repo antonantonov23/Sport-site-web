@@ -1,0 +1,63 @@
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">New Player</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-signin thumbnail" role="form" name="form" (ngSubmit)="f.form.valid && onSubmitNew()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" placeholder="Name" md-input name="nameOfPlayer" [(ngModel)]="player.nameOfPlayer" #username="ngModel" required type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input class="form-control" placeholder="Date of Birth" md-input name="dateOfBirth" [(ngModel)]="player.dateOfBirth" #username="ngModel" required type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Number</label>
+        <input class="form-control" placeholder="Number" md-input name="number" [(ngModel)]="player.number" #username="ngModel" required type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Team ID</label>
+        <input class="form-control" placeholder="Team ID" md-input name="teamId" [(ngModel)]="player.teamId" #username="ngModel" required type="text">
+      </div>
+      <button class="btn btn-block bt-lg btn-outline-success" type="submit">Save</button>
+    </form>
+  </div>
+</ng-template>
+
+<div class="jumbotron">
+  <a role='button' class="btn btn-outline-success pull-right" (click)='newPlayer()'>New player</a>
+  <h2>Players</h2>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Player No</th>
+        <th>Name</th>
+        <th>Birthdate</th>
+        <th>Team ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let player of players">
+      <tr>
+        <td>{{player.id}}</td>
+        <td>{{player.number}}</td>
+        <td>{{player.nameOfPlayer}}</td>
+        <td>{{player.dateOfBirth}}</td>
+        <td>{{player.teamId}}</td>
+        <td nowrap>
+          <button class='btn btn-sm btn-primary mr-5' (click)="editEntity()">Edit</button>
+          <button class='btn btn-sm btn-outline-danger' (click)="deleteEntity()">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
